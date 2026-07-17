@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joyeux 18ème Anniversaire Marthe</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- Fond animé et pluie de cœurs -->
+  <div id="page-background">
+    <div class="starfield"></div>
+    <div class="starfield starfield--small"></div>
+    <div class="heart-rain" aria-hidden="true"></div>
+  </div>
+
+  <!-- Écran d'ouverture principal -->
+  <div id="overlay" class="overlay active">
+    <div class="overlay-card glass">
+      <h1>Bienvenue ❤️</h1>
+      <p>Avant d'ouvrir cette surprise, écris ton prénom.</p>
+      <input id="nameInput" type="text" placeholder="Entre ton prénom" autocomplete="off">
+      <button id="openButton" class="button">Ouvrir la surprise</button>
+      <p id="overlayMessage" class="overlay-message"></p>
+    </div>
+  </div>
+
+  <!-- Contenu principal -->
+  <main class="site-content">
+    <section class="hero section" id="home">
+      <div class="hero-content glass">
+        <p class="hero-label">Pour toi, Marthe</p>
+        <h1>❤️ Joyeux 18ème Anniversaire Marthe ❤️</h1>
+        <p class="hero-subtitle">À la plus merveilleuse personne de mon univers.</p>
+        <button class="button button-large" id="startStory">Commencer notre histoire</button>
+      </div>
+    </section>
+
+    <section class="section countdown-section glass" id="countdown">
+    </section>
+
+    <!-- Nouvelle section galerie moderne et romantique -->
+    <section class="section photo-gallery-section" id="photoGallery">
+      <div class="rose-petals-container" id="petalsContainer" aria-hidden="true"></div>
+      
+      <div class="gallery-title-wrapper">
+        <h2 class="gallery-main-title">❤️ Les plus beaux sourires de Marthe ❤️</h2>
+        <p class="gallery-subtitle">Chaque photo raconte un souvenir que je garderai toujours dans mon cœur.</p>
+      </div>
+
+      <div class="modern-gallery-grid">
+        <div class="gallery-photo-card fade-up" data-index="0">
+          <img src="images/ChatGPT%20Image%2014%20juil.%202026%2C%2008_28_12.png" alt="Photo 1 de Marthe" loading="lazy">
+          <div class="photo-overlay">
+            <span class="view-text">Voir la photo</span>
+          </div>
+        </div>
+
+        <div class="gallery-photo-card fade-up" data-index="1" style="animation-delay: 0.1s;">
+          <img src="images/ChatGPT%20Image%2014%20juil.%202026%2C%2008_33_22.png" alt="Photo 2 de Marthe" loading="lazy">
+          <div class="photo-overlay">
+            <span class="view-text">Voir la photo</span>
+          </div>
+        </div>
+
+        <div class="gallery-photo-card fade-up" data-index="2" style="animation-delay: 0.2s;">
+          <img src="images/ChatGPT%20Image%2014%20juil.%202026%2C%2008_38_03.png" alt="Photo 3 de Marthe" loading="lazy">
+          <div class="photo-overlay">
+            <span class="view-text">Voir la photo</span>
+          </div>
+        </div>
+
+        <div class="gallery-photo-card fade-up" data-index="3" style="animation-delay: 0.3s;">
+          <img src="images/file_00000000c36472438acb17b644fc9aa7%20%281%29.png" alt="Photo 4 de Marthe" loading="lazy">
+          <div class="photo-overlay">
+            <span class="view-text">Voir la photo</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox modal -->
+    <div id="photoLightbox" class="photo-lightbox">
+      <div class="lightbox-content">
+        <button class="lightbox-close" aria-label="Fermer la galerie">&times;</button>
+        
+        <div class="lightbox-image-container">
+          <img id="lightboxImage" src="" alt="Photo agrandie">
+        </div>
+
+        <button class="lightbox-nav lightbox-prev" aria-label="Photo précédente">‹</button>
+        <button class="lightbox-nav lightbox-next" aria-label="Photo suivante">›</button>
+
+        <div class="lightbox-counter">
+          <span id="currentPhotoNumber">1</span> / <span id="totalPhotos">4</span>
+        </div>
+      </div>
+    </div>
+
+    <section class="section story-section glass" id="story">
+      <div class="section-header">
+        <h2>Notre histoire</h2>
+        <p>Un voyage poétique en six moments précieux.</p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-card"><h3>Notre rencontre ❤️</h3><p>Le premier regard qui a changé nos vies.</p></div>
+        <div class="timeline-card"><h3>Nos premiers messages 📱</h3><p>Des mots timides qui ont transformé en promesses.</p></div>
+        <div class="timeline-card"><h3>Notre première sortie 🌹</h3><p>Le moment où nos cœurs se sont rapprochés.</p></div>
+        <div class="timeline-card"><h3>Nos plus beaux souvenirs 📸</h3><p>Chaque instant partagé garde une empreinte lumineuse.</p></div>
+        <div class="timeline-card"><h3>Aujourd'hui, tes 18 ans 🎂</h3><p>Un jour exceptionnel pour célébrer ta beauté et ta joie.</p></div>
+        <div class="timeline-card"><h3>Notre avenir ensemble 💍</h3><p>Des rêves à deux, une promesse de toujours.</p></div>
+      </div>
+    </section>
+
+    <section class="section promises-section glass" id="promises">
+      <div class="section-header">
+        <h2>Mes promesses</h2>
+        <p>Cinq engagements sincères pour toi et pour nous.</p>
+      </div>
+      <div class="promises-grid">
+        <div class="promise-card glass"><p>Toujours te respecter.</p></div>
+        <div class="promise-card glass"><p>Toujours te soutenir.</p></div>
+        <div class="promise-card glass"><p>Toujours te faire sourire.</p></div>
+        <div class="promise-card glass"><p>Être présent dans les bons comme dans les mauvais moments.</p></div>
+        <div class="promise-card glass"><p>Continuer à t'aimer chaque jour.</p></div>
+      </div>
+    </section>
+
+    <section class="section letter-section" id="letter">
+      <div class="section-header glass">
+        <h2>Lettre d'amour</h2>
+        <p>Un texte chargé de douceur, écrit pour ton cœur.</p>
+      </div>
+      <div class="letter-card glass">
+        <pre class="letter-text" id="letterText"></pre>
+      </div>
+    </section>
+
+    <section class="section reasons-section glass" id="reasons">
+      <div class="section-header">
+        <h2>30 raisons pour lesquelles je t'aime</h2>
+        <p>Chaque raison est une étincelle de mon amour pour toi.</p>
+      </div>
+      <div class="reasons-grid" id="reasonsGrid"></div>
+    </section>
+
+    <section class="section reasons-100-section glass" id="reasons100">
+      <div class="section-header">
+        <h2>100 raisons pour lesquelles je t'aime</h2>
+        <p>Chaque clic dévoile une nouvelle raison de t'aimer.</p>
+      </div>
+      <div class="discover-reason-card glass">
+        <button id="discoverReason" class="button button-large">Découvrir une raison</button>
+        <p id="reasonReveal" class="reason-reveal">Appuie pour voir une raison.</p>
+      </div>
+    </section>
+
+    <section class="section quotes-section glass" id="quotes">
+      <h2>Citations romantiques</h2>
+      <p id="quoteText" class="quote-text"></p>
+    </section>
+
+    <section class="section gifts-section" id="gifts">
+      <div class="section-header">
+        <h2>Cadeaux</h2>
+        <p>Clique sur chaque cadeau pour découvrir une déclaration.</p>
+      </div>
+      <div class="gift-grid">
+        <button class="gift-card glass" data-message="Tu es le trésor de ma vie.">Cadeau 1</button>
+        <button class="gift-card glass" data-message="Ton sourire illumine mes journées.">Cadeau 2</button>
+        <button class="gift-card glass" data-message="Chaque moment avec toi est précieux.">Cadeau 3</button>
+        <button class="gift-card glass" data-message="Ton amour est mon plus bel avenir.">Cadeau 4</button>
+      </div>
+      <p id="giftMessage" class="gift-message"></p>
+    </section>
+
+    <section class="section giftbox-section glass" id="giftBoxSection">
+      <div class="section-header">
+        <h2>Coffret cadeau interactif</h2>
+        <p>Un coffret magique qui s'ouvre pour révéler une douce surprise.</p>
+      </div>
+      <div class="giftbox-container">
+        <div class="giftbox" id="giftBox">
+          <div class="box-lid"></div>
+          <div class="box-body"></div>
+          <div class="gift-ribbon"></div>
+        </div>
+        <p id="giftMessageBox" class="gift-message-box">Clique sur la boîte pour ouvrir mon cœur.</p>
+      </div>
+    </section>
+
+    <section class="section constellation-section glass" id="constellation">
+      <div class="section-header">
+        <h2>Constellation</h2>
+        <p>Une étoile porte ton nom dans notre ciel enchanté.</p>
+      </div>
+      <div class="constellation-card">
+        <div class="star-sky">
+          <div class="star-marthe" id="starMarthe">Marthe</div>
+        </div>
+        <p id="constellationMessage" class="constellation-message">Clique sur ton étoile pour entendre ton éclat.</p>
+      </div>
+    </section>
+
+    <!-- Section Vidéo Premium -->
+    <section class="section video-section" id="videoSection">
+      <div class="video-luminous-particles" aria-hidden="true"></div>
+      
+      <div class="video-header">
+        <h2 class="video-title">🎥 Notre plus beau souvenir ❤️</h2>
+        <p class="video-subtitle">Chaque instant passé avec toi est un souvenir que je garderai précieusement dans mon cœur.</p>
+      </div>
+
+      <div class="video-container-wrapper">
+        <div class="video-container glass">
+          <video id="premiumVideo" class="premium-video" playsinline>
+            <source src="videos/marthe.deo.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la vidéo.
+          </video>
+          <div class="video-controls-custom">
+            <button id="videoPlayPause" class="video-control-btn" aria-label="Lecture/Pause">
+              <span class="play-icon">▶</span>
+            </button>
+            <div class="video-progress-bar-custom">
+              <div id="videoProgress" class="video-progress-fill"></div>
+            </div>
+            <span id="videoDuration" class="video-time">0:00</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carte animée de fin de vidéo -->
+      <div id="videoEndCard" class="video-end-card glass hidden">
+        <div class="end-card-content">
+          <h3 class="end-card-title">💝 Un message pour toi</h3>
+          <div class="end-card-message">
+            <p>Merci d'avoir partagé tous ces merveilleux moments avec moi.</p>
+            <p>J'espère que cette vidéo te fera sourire autant que chacun de nos souvenirs me fait sourire.</p>
+            <p class="end-card-signature">Joyeux 18ᵉ anniversaire, Marthe. ❤️</p>
+          </div>
+          <button id="closeEndCard" class="button">Fermer</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Transition élégante entre les deux vidéos -->
+    <div class="video-bridge" id="videoBridge" aria-hidden="true">
+      <div class="video-bridge-overlay"></div>
+      <div class="video-bridge-stars" id="bridgeStars"></div>
+      <div class="video-bridge-text-wrapper">
+        <p class="video-bridge-text" id="bridgeText"></p>
+      </div>
+    </div>
+
+    <!-- Section Deuxième Vidéo Premium -->
+    <section class="section video2-section" id="video2Section">
+      <div class="video2-luminous-particles" id="video2Particles" aria-hidden="true"></div>
+
+      <div class="video2-header">
+        <h2 class="video2-title">🎁 Un dernier cadeau pour toi ❤️</h2>
+        <p class="video2-subtitle">Cette dernière vidéo est un petit morceau de mon cœur que je voulais partager avec toi.</p>
+      </div>
+
+      <div class="video2-container-wrapper">
+        <div class="video2-container glass" id="video2Container">
+          <video id="premiumVideo2" class="video2-premium" playsinline>
+            <source src="videos/marthe.deo%20(2).mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la vidéo.
+          </video>
+          <div class="video2-controls-custom">
+            <button id="video2PlayPause" class="video2-control-btn" aria-label="Lecture/Pause">
+              <span class="play-icon">▶</span>
+            </button>
+            <div class="video2-progress-bar-custom">
+              <div id="video2Progress" class="video2-progress-fill"></div>
+            </div>
+            <span id="video2Duration" class="video2-time">0:00</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="video2GrandFinale" class="video2-grand-finale hidden" aria-hidden="true">
+        <div class="video2-finale-petals" id="video2FinalePetals" aria-hidden="true"></div>
+        <div class="video2-finale-fireworks" id="video2FinaleFireworks" aria-hidden="true"></div>
+        <div id="video2FinalCard" class="video2-final-card glass">
+          <div class="video2-final-card-content">
+            <h3 class="video2-final-card-title">💌 Un message pour toujours</h3>
+            <div class="video2-final-card-message" id="video2FinalMessage"></div>
+            <div class="video2-marthe-title" id="video2MartheTitle">❤️ MARTHE ❤️</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section surprise-section glass" id="bonus">
+      <div class="section-header">
+        <h2>Surprise</h2>
+        <p>Un dernier message spécial rien que pour toi.</p>
+      </div>
+      <button class="button button-large" id="surpriseButton">Découvrir mon dernier message</button>
+      <button class="button button-large" id="finalSurprise">💌 Une dernière chose...</button>
+      <div id="finalMedia" class="final-media hidden glass"></div>
+      <div id="surpriseMessage" class="surprise-message"></div>
+    </section>
+
+    <section class="section music-premium-section" id="musicSection">
+      <div class="music-romantic-particles" id="musicParticles" aria-hidden="true"></div>
+
+      <div class="music-header">
+        <h2 class="music-main-title">❤️ Les mélodies de notre histoire ❤️</h2>
+        <p class="music-subtitle">Chaque chanson accompagne un souvenir, une émotion ou un moment que je voulais partager avec toi.</p>
+      </div>
+
+      <div class="music-player-wrapper">
+        <div class="music-player-card glass" id="musicPlayerCard">
+          <audio id="audio"></audio>
+
+          <div class="album-art-zone">
+            <div class="album-art-glow" aria-hidden="true"></div>
+            <div class="album-art" id="albumArt">
+              <div class="album-art-inner" id="albumArtInner">
+                <span class="album-art-disc" aria-hidden="true"></span>
+                <span class="album-art-icon">🎵</span>
+              </div>
+            </div>
+            <div class="audio-visualizer" id="audioVisualizer" aria-hidden="true"></div>
+          </div>
+
+          <div class="track-info-zone">
+            <p class="track-title" id="trackTitle"></p>
+            <p class="track-artist">Pour Marthe ❤️</p>
+          </div>
+
+          <div class="music-progress-section">
+            <span class="music-time" id="currentTime">0:00</span>
+            <div class="music-progress-bar" id="progressBar">
+              <div class="music-progress-fill" id="progressFill"></div>
+              <div class="music-progress-thumb" id="progressThumb"></div>
+            </div>
+            <span class="music-time" id="totalTime">0:00</span>
+          </div>
+
+          <div class="music-controls">
+            <button id="shuffleBtn" class="music-btn" type="button" aria-label="Lecture aléatoire" title="Lecture aléatoire">🔀</button>
+            <button id="prevBtn" class="music-btn" type="button" aria-label="Précédent" title="Précédent">⏮</button>
+            <button id="playPause" class="music-btn music-btn-play" type="button" aria-label="Lecture" title="Lecture">▶</button>
+            <button id="nextBtn" class="music-btn" type="button" aria-label="Suivant" title="Suivant">⏭</button>
+            <button id="repeatBtn" class="music-btn" type="button" aria-label="Répéter" title="Répéter">🔁</button>
+          </div>
+
+          <div class="music-volume">
+            <span class="volume-icon" aria-hidden="true">🔊</span>
+            <input id="volumeControl" type="range" min="0" max="1" step="0.05" value="0.7" aria-label="Volume">
+          </div>
+        </div>
+
+        <div class="music-playlist-card glass">
+          <h3 class="playlist-title">🎵 Playlist complète</h3>
+          <ul id="playlist" class="music-playlist"></ul>
+        </div>
+      </div>
+
+      <div id="musicNotification" class="music-notification hidden" role="status" aria-live="polite">
+        <span class="notif-icon" aria-hidden="true">🎶</span>
+        <div class="notif-content">
+          <p class="notif-label">Lecture en cours...</p>
+          <p class="notif-track" id="notifTrackName"></p>
+        </div>
+      </div>
+    </section>
+
+    <button id="secretButton" class="secret-button">✨</button>
+    <div id="popup" class="popup hidden glass">
+      <p>Tu es mon plus beau cadeau.</p>
+      <button id="closePopup" class="button button-small">Fermer</button>
+    </div>
+  </main>
+
+  <footer class="footer glass">
+    <p>Créé avec tout mon amour pour Marthe ❤️</p>
+  </footer>
+
+  <div id="lightbox" class="lightbox hidden glass"><img id="lightboxImage" alt="Agrandissement"><button id="closeLightbox" class="button button-small">Fermer</button></div>
+</body>
+</html>
